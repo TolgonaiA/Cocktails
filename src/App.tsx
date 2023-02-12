@@ -1,24 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MenuCover from "./containers/MenuCover";
+import MenuBar from "./containers/MenuBar";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-slate-800 grid grid-cols-2 gap-2 px-5 font-mono text-orange-200 h-screen'>
+      <MenuCover/>
+      <MenuBar/>
     </div>
   );
 }

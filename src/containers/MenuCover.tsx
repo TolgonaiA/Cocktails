@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 
-const Naviagtion = () => {
+const MenuCover = () => {
+
+
   return (
-    <div>
-      
+    <div className='container bg-slate-900 px-4 py-4 flex-col'>
+      <h1 className='text-center'>Cocktails</h1>
+      <p>Select a cocktail search criterion: by cocktail name or by ingredient and enter a keyword</p>
+
     </div>
   );
 };
 
-export default Naviagtion;
+export default MenuCover;
