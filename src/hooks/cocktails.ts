@@ -8,20 +8,18 @@ export const useCocktails = () => {
   const [error, setError] = useState('');
 
   const fetchRandomCocktails = async () => {
-    let cocktailArr = [];
+    let cocktailArr = <ICocktail[]>[];
     while (cocktailArr.length !== 6) {
       try {
         const response = await axiosApi.get<ICocktail>('/random.php');
         cocktailArr.push(response.data);
-        console.log(response.data)
       } catch (e: unknown) {
         const error = e as AxiosError;
         setError(error.message);
-
       }
     }
     setCocktails(cocktailArr);
   }
 
-  return {cocktails, fetchRandomCocktails}
+  return {cocktails, fetchRandomCocktails, setCocktails}
 }
