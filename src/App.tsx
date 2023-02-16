@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import MenuCover from "./containers/MenuCover";
 import MenuBar from "./containers/MenuBar";
 

@@ -13,7 +13,7 @@ export const useSearchCocktail = () => {
   });
   const [error, setError] = useState('');
 
-  const {cocktails, setCocktails} = useCocktails();
+  const [updateCocktails, setUpdateCocktails] = useState<ICocktail[]>([])
 
   const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
@@ -44,8 +44,7 @@ export const useSearchCocktail = () => {
       let urlParam: string = '';
       checkbox.cocktail ? urlParam = searchByNameURL : urlParam = searchByIngredientURL;
       const response = await axiosApi.get<ICocktail[]>(urlParam + value);
-      setCocktails(response.data);
-      console.log(response.data)
+      setUpdateCocktails(response.data);
       setValue('');
     } catch (e: unknown){
       const error = e as AxiosError;
@@ -54,5 +53,5 @@ export const useSearchCocktail = () => {
   }
 
 
-  return {submitHandler, changeHandler, checkboxHandler, checkbox}
+  return {submitHandler, changeHandler, checkboxHandler, checkbox, updateCocktails}
 }

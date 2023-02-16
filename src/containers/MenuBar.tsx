@@ -12,7 +12,7 @@ const MenuBar = () => {
 
   return (
     <div className='container bg-slate-900 px-4 py-4 flex flex-col justify-between'>
-      {cocktails && cocktails.map((cocktail:ICocktail, index:number) => <Cocktail cocktail={cocktail} index={index} key={cocktail.drinks[0].idDrink}/>)}
+      {cocktails && cocktails.map((cocktail:ICocktail) => <Cocktail cocktail={cocktail} key={cocktail.drinks[0].idDrink}/>)}
     </div>
   );
 };

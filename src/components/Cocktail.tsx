@@ -3,10 +3,9 @@ import {ICocktail} from "../models";
 
 interface CocktailProps {
   cocktail: ICocktail,
-  index: number
 }
 
-const Cocktail = ({cocktail, index}: CocktailProps) => {
+const Cocktail = ({cocktail}: CocktailProps) => {
   return (
     <div className='flex items-center'>
       <img src={cocktail.drinks[0].strDrinkThumb ? cocktail.drinks[0].strDrinkThumb : ''} className='w-1/6'/>

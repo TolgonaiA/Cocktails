@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useSearchCocktail} from "../hooks/search";
+import {ICocktail} from "../models";
+
 
 
 const MenuCover = () => {
   const {submitHandler, changeHandler, checkbox, checkboxHandler} = useSearchCocktail();
+
+
   return (
     <div className='container bg-slate-900 px-4 py-4 flex-col'>
       <h1 className='text-center text-6xl'>Cocktails</h1>
