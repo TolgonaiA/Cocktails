@@ -1,6 +1,4 @@
 export interface ICocktail {
-  "drinks": [
-    {
       "idDrink": string | null,
       "strDrink": string | null,
       "strDrinkAlternate": string | null,
@@ -52,6 +50,5 @@ export interface ICocktail {
       "strImageAttribution": string | null,
       "strCreativeCommonsConfirmed": string | null,
       "dateModified": string | null,
-    }]
 }
 
