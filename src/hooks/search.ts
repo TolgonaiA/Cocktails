@@ -2,11 +2,11 @@ import React, {ChangeEvent, useEffect, useState} from "react";
 import {AxiosError} from "axios";
 import {searchByIngredientURL, searchByNameURL} from "../config";
 import axiosApi from "../axiosApi";
-import {ICocktail} from "../models";
+import {ICheckbox, ICocktail} from "../models";
 
 export const useSearchCocktail = () => {
   const [value, setValue] = useState('');
-  const [checkbox, setCheckbox] = useState({
+  const [checkbox, setCheckbox] = useState<ICheckbox>({
     ingredient: false,
     cocktail: true
   });
@@ -71,5 +71,5 @@ export const useSearchCocktail = () => {
   }
 
 
-  return {submitHandler, changeHandler, checkboxHandler, checkbox, cocktails}
+  return {submitHandler, changeHandler, checkboxHandler, checkbox, cocktails, value}
 }

@@ -52,3 +52,8 @@ export interface ICocktail {
       "dateModified": string | null,
 }
 
+export interface ICheckbox {
+      ingredient: boolean,
+      cocktail: boolean
+}
+
