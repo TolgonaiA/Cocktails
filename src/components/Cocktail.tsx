@@ -8,7 +8,6 @@ interface CocktailProps {
 }
 
 const Cocktail = ({cocktail, fetchCocktail}: CocktailProps) => {
-  // const {fetchCocktail} = useFetchCocktail();
   return (
     <div className='flex items-center mb-10'>
       <img src={cocktail.strDrinkThumb ? cocktail.strDrinkThumb : ''} className='w-1/6'/>

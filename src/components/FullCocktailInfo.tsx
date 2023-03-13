@@ -17,14 +17,24 @@ const FullCocktailInfo = ({cocktail}: FullCocktailProps) => {
 
   return (
     <div className='flex'>
-      <img src={cocktail.strDrinkThumb ? cocktail.strDrinkThumb : ''} alt={cocktail.strDrink ? cocktail.strDrink : ''}/>
-      <div>
-        <h3>{cocktail.strDrink}</h3>
+      <div className='w-1/2 mr-5'>
+        <img src={cocktail.strDrinkThumb ? cocktail.strDrinkThumb : ''} alt={cocktail.strDrink ? cocktail.strDrink : ''}/>
+      </div>
+      <div className='text-slate-900 w-1/2'>
+        <h3 className='text-lg font-bold'>{cocktail.strDrink}</h3>
         <p>Type: {cocktail.strAlcoholic}</p>
         <p>Category: {cocktail.strCategory}</p>
+        <p>Ingredients:</p>
         {Object.keys(cocktail).filter(isIng).map((el, index) => {
-          let key = 'strIngredient'+index
-          return <p>{cocktail[key]}</p>})}
+          let count = index +1
+          let key = 'strIngredient'+count
+          let measure = 'strMeasure'+count
+          if (cocktail[key] !== null) {
+            return <p>{cocktail[key]} - {cocktail[measure]}</p>
+          }
+          })}
+          <p>Instructions:</p>
+          <p>{cocktail.strInstructions}</p>
       </div>
     </div>
   );
